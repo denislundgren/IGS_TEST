@@ -1,0 +1,34 @@
+OBJ_DIR=obj/
+BIN_DIR=bin/
+LIBS = -lclntsh
+#CFLAGS= -ansi -W -Wall -pedantic
+#CFLAGS= -O -W -Wall -G -pedantic
+CFLAGS= -O -W -Wall -pedantic -g
+
+all : gpalim roman rgb_range lista prize
+
+$(OBJ_DIR)gpalim.o : gpalim.c
+	gcc -c $(CFLAGS) gpalim.c -o $(OBJ_DIR)gpalim.o
+gpalim : $(OBJ_DIR)gpalim.o
+	gcc -o gpalim $(OBJ_DIR)gpalim.o
+
+$(OBJ_DIR)roman.o : roman.c
+	gcc -c $(CFLAGS) roman.c -o $(OBJ_DIR)roman.o
+roman : $(OBJ_DIR)roman.o
+	gcc -o roman $(OBJ_DIR)roman.o
+
+$(OBJ_DIR)rgb_range.o : rgb_range.c
+	gcc -c $(CFLAGS) rgb_range.c -o $(OBJ_DIR)rgb_range.o
+rgb_range : $(OBJ_DIR)rgb_range.o
+	gcc -o rgb_range $(OBJ_DIR)rgb_range.o
+
+$(OBJ_DIR)lista.o : lista.c
+	gcc -c $(CFLAGS) lista.c -o $(OBJ_DIR)lista.o
+lista : $(OBJ_DIR)lista.o
+	gcc -o lista $(OBJ_DIR)lista.o
+
+$(OBJ_DIR)prize.o : prize.c
+	gcc -c $(CFLAGS) prize.c -o $(OBJ_DIR)prize.o
+prize : $(OBJ_DIR)prize.o
+	gcc -o prize $(OBJ_DIR)prize.o
+
